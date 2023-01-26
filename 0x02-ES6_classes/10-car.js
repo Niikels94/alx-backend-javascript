@@ -1,26 +1,39 @@
-xport default class Car {
+export default class Car {
   constructor(brand, motor, color) {
-    // Create objs
+    this.brand = brand;
+    this.motor = motor;
+    this.color = color;
+  }
+
+  get brand() {
+    return this._brand;
+  }
+
+  set brand(brand) {
     this._brand = brand;
+  }
+
+  get motor() {
+    return this._motor;
+  }
+
+  set motor(motor) {
     this._motor = motor;
+  }
+
+  get color() {
+    return this._color;
+  }
+
+  set color(color) {
     this._color = color;
   }
 
-  // Methods
-
-  cloneCar() {
-    const NewObj = this.constructor[Symbol.species] || this.constructor;
-    const clone = new NewObj();
-    return clone;
+  static get [Symbol.species]() {
+    return this;
   }
 
-  // Setters
-
-  // Getters
+  cloneCar() {
+    return new this.constructor[Symbol.species]();
+  }
 }
-/* class TestCar extends Car {};
-const tc1 = new TestCar("Nissan", "Turbo", "Pink");
-const tc2 = tc1.cloneCar();
-console.log(tc1 instanceof TestCar);
-console.log(tc2 instanceof TestCar);
-console.log(tc1 == tc2); */
