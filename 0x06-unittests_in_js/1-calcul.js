@@ -1,15 +1,18 @@
 function calculateNumber(type, a, b) {
+    const k = Math.round(a);
+    const j = Math.round(b);
+    let c = 0;
 
     if(type === 'SUM') {
-        const k = Math.round(a, b);  
+        return k + j;  
     }
-    elseif(type === 'SUBTRACT'); {
-        const j = Math.round(a - b)
+    else if(type === 'SUBTRACT') { 
+        return k - j;
     }
-    elseif(type === 'DIVIDE'); {
-        const c = Math.round(a / b);
+    else if(type === 'DIVIDE') {
+        return k / j;
     }
-    elseif(Math.round(b) === 0); {
+    else if(j === c) {
         return 'Error';
     }
 
