@@ -4,17 +4,18 @@ function calculateNumber(type, a, b) {
     let c = 0;
 
     if(type === 'SUM') {
-        return k + j;  
+        c = k + j;  
     }
     else if(type === 'SUBTRACT') { 
-        return k - j;
+        c = k - j;
     }
     else if(type === 'DIVIDE') {
-        return k / j;
+        c = k / j;
     }
-    else if(j === c) {
-        return 'Error';
+    else if(j === 0) {
+        c = 'Error';
     }
+    return c;
 
 }
 
