@@ -9,14 +9,16 @@ function calculateNumber(type, a, b) {
     else if(type === 'SUBTRACT') { 
         c = k - j;
     }
-    else if(type === 'DIVIDE') {
+    else if (type === 'DIVIDE') {
+        if (j === 0) {
+            c = 'Error';
+    } 
+    else {
         c = k / j;
     }
-    else if(j === 0) {
-        c = 'Error';
-    }
-    return c;
+}
 
+return c;
 }
 
 module.exports = calculateNumber;
