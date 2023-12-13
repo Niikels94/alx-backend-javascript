@@ -2,7 +2,6 @@ function calculateNumber(type, a, b) {
     const k = Math.round(a);
     const j = Math.round(b);
     let c = 0;
-
     if(type === 'SUM') {
         c = k + j;  
     }
@@ -17,7 +16,6 @@ function calculateNumber(type, a, b) {
         c = k / j;
     }
 }
-
 return c;
 }
 
