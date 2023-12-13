@@ -1,6 +1,8 @@
 const assert = require('assert');
 const calculateNumber = require('./1-calcul');
 
+
+
 describe('MyFunction', () => {
     it('should round two numbers and return the sum of it', () => {
         assert.strictEqual(calculateNumber('SUM', 1, 2), 3);
@@ -14,8 +16,8 @@ describe('MyFunction', () => {
         assert.strictEqual(calculateNumber('DIVIDE', 9.6, 5.1), 2);
     });
     
-    it('should round numbers and return an error', () => {
-        assert.strictEqual(calculateNumber('Error', -1.4, 0), 'Error');
+    it(`checking if numbers round`, function() {
+        assert.strictEqual(calculateNumber("DIVIDE", 1.7, 0), "Error");
     });
 
 })
