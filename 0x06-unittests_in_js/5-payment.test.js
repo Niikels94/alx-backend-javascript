@@ -1,4 +1,4 @@
-onst sinon = require('sinon');
+const sinon = require('sinon');
 const sendPaymentRequestToApi = require('./4-payment');
 const assert = require("assert");
 
