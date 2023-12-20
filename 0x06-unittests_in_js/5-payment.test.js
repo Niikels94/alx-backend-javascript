@@ -1,23 +1,22 @@
-const {describe, it} = require("mocha");
-const sinon = require("sinon");
-const sendPaymentRequestToApi = require("./5-payment");
-const expect = require("chai").expect;
+onst sinon = require('sinon');
+const sendPaymentRequestToApi = require('./4-payment');
+const assert = require("assert");
 
-describe("sendPaymentRequestToApi", function() {
-    beforeEach("Set up spy to use for each test", function() {
-	sinon.spy(console, "log");
+describe("sendPaymentRequestToApi", () => {
+    beforeEach("Set up spy for each test", () => {
+	    sinon.spy(console, "log");
     });
-    afterEach("restore spy after each test", function() {
-	console.log.restore();
+    afterEach("restore spy after each test", () => {
+	    console.log.restore();
     });
-    it("check that console.log is called with the right arg", function() {
-	sendPaymentRequestToApi(100, 20);
+    it("check that console.log is called with the right arg", () => {
+	    sendPaymentRequestToApi(100, 20);
 
-	expect(console.log.withArgs("The total is: 120").calledOnce).to.be.true;
+	    assert(console.log.withArgs("The total is: 120").calledOnce);
     });
-    it("check that console.log is called with the right arg", function() {
-	sendPaymentRequestToApi(10, 10);
+    it("check that console.log is called with the right arg", () => {
+	    sendPaymentRequestToApi(10, 10);
 
-	expect(console.log.withArgs("The total is: 20").calledOnce).to.be.true;
+	    assert(console.log.withArgs("The total is: 20").calledOnce);
     });
 });
